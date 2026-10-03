@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Documentation for Project 1: Kludging as a Creative Approach.">
+  <title>Project 1: Kludging as a Creative Approach</title>
+  <style>
+    :root { color-scheme: dark; --bg: #120e1b; --panel: #201827; --text: #f5eef6; --muted: #d0c4d5; --pink: #f3aedb; --line: #715778; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 18px/1.7 Arial, Helvetica, sans-serif; }
+    main { width: min(900px, calc(100% - 40px)); margin: 0 auto; padding: 66px 0 90px; }
+    h1 { margin: 0 0 54px; font-size: clamp(1.9rem, 3.4vw, 2.8rem); line-height: 1.18; letter-spacing: -.025em; }
+    p { margin: 0 0 20px; }
+    .section-label { margin: 0 0 20px; color: var(--pink); font-size: .82rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+    section { margin: 0 0 74px; }
+    .copy { max-width: 760px; color: var(--muted); }
+    figure { margin: 24px 0 0; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; }
+    figcaption { margin-top: 8px; color: #b9aabd; font-size: .82rem; line-height: 1.45; }
+    .step { margin-top: 48px; }
+    .step:first-of-type { margin-top: 0; }
+    .step-label { margin-bottom: 8px; color: var(--pink); font-size: .9rem; font-weight: 700; }
+    .diagram-frame { position: relative; left: 50%; transform: translateX(-50%); width: min(1400px, calc(100vw - 40px)); overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); }
+    .diagram { display: block; width: 100%; min-width: 1000px; height: auto; }
+    .video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #000; }
+    .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .video-link { margin-top: 10px; font-size: .85rem; }
+    .video-link a { color: var(--pink); }
+    @media (max-width: 600px) { main { padding-top: 42px; } h1 { margin-bottom: 42px; } section { margin-bottom: 58px; } body { font-size: 16px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Project 1: Kludging as a Creative Approach</h1>
+
+    <section aria-label="Project idea">
+      <p class="section-label">01 / Project idea</p>
+      <p class="copy">I started with the reference video I shared. I liked its bright center, moving rings and the way one action could change the whole scene. I wanted to make that kind of response with my computer keyboard.</p>
+      <p class="copy">I did not want to copy the forest in the video. I changed the setting to a Manhattan inspired night street, with tall buildings, deep purple colors and a pale pink light in the middle. I wanted the light to feel like the energy source for the city.</p>
+    </section>
+
+    <section aria-label="System diagram">
+      <p class="section-label">02 / System diagram</p>
+      <p class="copy">This is how the finished piece works in Unity. The street is the base scene. My keyboard sends an input to the controller script, which changes the rings, colors, particles and light. The image on the right is the piece in the Game view.</p>
+      <div class="diagram-frame" role="region" aria-label="System diagram; scroll sideways on a small screen" tabindex="0">
+        <svg class="diagram" viewBox="0 0 1500 710" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="diagram-title diagram-desc">
+          <title id="diagram-title">Keyboard controlled Unity city system</title>
+          <desc id="diagram-desc">Keyboard keys 1 and 4 feed a Unity controller script. The script controls the city, a moving black and white color wave, particle burst and glow. All appear together in the final Game view.</desc>
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#f3aedb"/></marker>
+            <clipPath id="preview"><rect x="1176" y="188" width="256" height="161" rx="5"/></clipPath>
+          </defs>
+          <rect width="1500" height="710" fill="#201827"/>
+          <g fill="none" stroke="#f3aedb" stroke-width="3" marker-end="url(#arr)">
+            <path d="M281 348H347"/>
+            <path d="M633 347H674V99H708"/>
+            <path d="M633 347H708"/>
+            <path d="M633 347H674V506H708"/>
+            <path d="M1035 99H1080V284H1128"/>
+            <path d="M1035 347H1128"/>
+            <path d="M1035 506H1080V403H1128"/>
+          </g>
+          <rect x="34" y="185" width="247" height="325" rx="12" fill="#302239" stroke="#dc99c6" stroke-width="2"/>
+          <text x="56" y="223" fill="#fff" font-family="Arial" font-size="24" font-weight="700">Keyboard</text>
+          <text x="56" y="275" fill="#e6d6ea" font-family="Arial" font-size="19">1: color / black &amp; white</text>
+          <text x="56" y="308" fill="#e6d6ea" font-family="Arial" font-size="19">1 again: color returns</text>
+          <text x="56" y="365" fill="#e6d6ea" font-family="Arial" font-size="19">4: large light burst</text>
+          <text x="56" y="432" fill="#bfaec6" font-family="Arial" font-size="17">No MIDI controller or</text>
+          <text x="56" y="459" fill="#bfaec6" font-family="Arial" font-size="17">on-screen buttons</text>
+          <rect x="347" y="185" width="286" height="325" rx="12" fill="#322541" stroke="#a891d0" stroke-width="2"/>
+          <text x="369" y="223" fill="#fff" font-family="Arial" font-size="24" font-weight="700">Unity controller</text>
+          <text x="369" y="271" fill="#e6d6ea" font-family="Arial" font-size="19">PortalScene.cs reads keys</text>
+          <text x="369" y="308" fill="#e6d6ea" font-family="Arial" font-size="19">and starts each effect.</text>
+          <text x="369" y="369" fill="#bfaec6" font-family="Arial" font-size="17">It also builds the street</text>
+          <text x="369" y="396" fill="#bfaec6" font-family="Arial" font-size="17">when I press Play.</text>
+          <rect x="708" y="34" width="327" height="144" rx="12" fill="#28293e" stroke="#a891d0" stroke-width="2"/>
+          <text x="730" y="71" fill="#fff" font-family="Arial" font-size="22" font-weight="700">Base scene</text>
+          <text x="730" y="107" fill="#e6d6ea" font-family="Arial" font-size="18">Towers, varied windows, road</text>
+          <text x="730" y="136" fill="#e6d6ea" font-family="Arial" font-size="18">street lights and pink core</text>
+          <rect x="708" y="220" width="327" height="253" rx="12" fill="#28293e" stroke="#a891d0" stroke-width="2"/>
+          <text x="730" y="257" fill="#fff" font-family="Arial" font-size="22" font-weight="700">Key 1: color wave</text>
+          <text x="730" y="294" fill="#e6d6ea" font-family="Arial" font-size="18">Ring travels out: gray follows</text>
+          <text x="730" y="325" fill="#e6d6ea" font-family="Arial" font-size="18">Ring returns: color follows</text>
+          <text x="730" y="370" fill="#e6d6ea" font-family="Arial" font-size="18">Glow and RGB color split</text>
+          <text x="730" y="414" fill="#bfaec6" font-family="Arial" font-size="16">Ring 2.3 s · color front 1.8 s</text>
+          <rect x="708" y="496" width="327" height="162" rx="12" fill="#28293e" stroke="#a891d0" stroke-width="2"/>
+          <text x="730" y="533" fill="#fff" font-family="Arial" font-size="22" font-weight="700">Key 4: burst</text>
+          <text x="730" y="571" fill="#e6d6ea" font-family="Arial" font-size="18">Particles and expanding rings</text>
+          <text x="730" y="603" fill="#e6d6ea" font-family="Arial" font-size="18">Flash, Bloom and RGB split</text>
+          <rect x="1128" y="146" width="338" height="317" rx="12" fill="#33233b" stroke="#f3aedb" stroke-width="2"/>
+          <text x="1151" y="177" fill="#fff" font-family="Arial" font-size="23" font-weight="700">Final Game view</text>
+          <image href="assets/color-start.png" x="1176" y="188" width="256" height="161" preserveAspectRatio="xMidYMid slice" clip-path="url(#preview)"/>
+          <text x="1151" y="386" fill="#e6d6ea" font-family="Arial" font-size="18">City + keyboard response</text>
+          <text x="1151" y="416" fill="#e6d6ea" font-family="Arial" font-size="18">shown on the same screen</text>
+          <text x="35" y="681" fill="#c6b6cc" font-family="Arial" font-size="16">Input</text>
+          <text x="348" y="681" fill="#c6b6cc" font-family="Arial" font-size="16">Control</text>
+          <text x="708" y="681" fill="#c6b6cc" font-family="Arial" font-size="16">Scene and effects</text>
+          <text x="1128" y="681" fill="#c6b6cc" font-family="Arial" font-size="16">What the viewer sees</text>
+        </svg>
+      </div>
+      <p class="copy" style="font-size:.8rem;margin-top:8px">On a phone, scroll sideways to see the full diagram.</p>
+    </section>
+
+    <section aria-label="Making process">
+      <p class="section-label">03 / Making process</p>
+      <div class="step">
+        <p class="step-label">First city test</p>
+        <p class="copy">I first put simple buildings around a small light. The street did not fill the frame and the middle felt too weak. This test helped me decide to make the light larger and give the city a clearer shape.</p>
+        <figure><img src="assets/early-city.webp" width="1420" height="964" loading="lazy" alt="Early Unity scene with simple buildings and a small light"><figcaption>My first test of the city and central light.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Manhattan inspired buildings</p>
+        <p class="copy">I changed the buildings to different heights and placed them in staggered rows around the open avenue. I also broke up the window colors so each floor was not one solid stripe. Some windows are dark; others have cyan, lilac, blue or a little warm yellow light. I tested a Blender model, but built the final city in Unity because it was easier to adjust each tower and its position there.</p>
+        <figure><img src="assets/building-process.webp" width="1800" height="760" loading="lazy" alt="Process illustration showing the street layout, building details and center light"><figcaption>My layout study for the city street and energy core.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Road and color</p>
+        <p class="copy">The ground looked like a large empty black area, so I added a road, sidewalks and a crosswalk. I removed the middle road line where it met the pink reflection. I moved the buildings and road toward dark purple, while leaving the window lights different colors.</p>
+        <figure><img src="assets/avenue-test.webp" width="1362" height="824" loading="lazy" alt="Unity road test with sidewalks, crosswalk and purple city buildings"><figcaption>The road gave the light a place inside the city.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">The energy core</p>
+        <p class="copy">I tried several versions of the center circle. The flat pink one in this image was not bright enough, so I changed it to a much lighter pink and increased its glow. I kept the permanent ring thin and soft. The brighter center now looks more like the source of the wave.</p>
+        <figure><img src="assets/early-core.webp" width="396" height="418" loading="lazy" alt="Earlier test with a flat pink center and thin circle"><figcaption>An earlier core before I made the pink light brighter.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Glow and focus</p>
+        <p class="copy">I used Bloom to make the pale pink core, ring, windows and street lights glow into the dark scene. I also used a brief RGB color split when the energy moves, so the buildings seem to scatter light. I tried depth of field, but it made everything too blurry, so I turned it off to keep the buildings sharp.</p>
+        <figure><img src="assets/color-start.png" width="880" height="553" loading="lazy" alt="Final colorful Unity street with a bright pink energy core"><figcaption>The clear, colorful scene before pressing a key.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Key 1: the wave moves out</p>
+        <p class="copy">I changed the controls from external buttons to the keyboard. When I press 1, a ring grows from the center and the scene turns black and white as the wave reaches it. I set the ring travel to about 2.3 seconds and the color change to about 1.8 seconds, then tested the timing until the change felt connected to the ring.</p>
+        <figure><img src="assets/key1-wave-out.png" width="880" height="553" loading="lazy" alt="Expanding energy ring crossing the city during the change to black and white"><figcaption>The first press of 1 sends the wave outward.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">The black and white state</p>
+        <p class="copy">When the outward ring has left the screen, the city stays black and white. The street, buildings and their window lights all change, while the glowing center still shows where the wave started.</p>
+        <figure><img src="assets/key1-black-white.png" width="880" height="553" loading="lazy" alt="City after key 1 wave, fully black and white"><figcaption>The scene after the first wave finishes.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Key 1 again: color returns</p>
+        <p class="copy">Pressing 1 again pulls the ring back toward the center, and the color returns as it moves inward. I wanted the second press to feel like the same action in reverse, instead of an instant color switch.</p>
+        <figure><img src="assets/key1-wave-return.png" width="880" height="553" loading="lazy" alt="Energy ring returning to the center while color comes back to the city"><figcaption>The second press of 1 brings the ring and color back.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Key 4: particle burst</p>
+        <p class="copy">I kept key 4 for the bigger impact. It sends out three rings and a burst of particles, while the center flashes and the RGB split becomes much stronger. I settled on a burst of 360 bright particles and 130 smaller lights, with the main wave lasting about 1.75 seconds. I kept these settings after they gave the scene the impact I wanted.</p>
+        <figure><img src="assets/key4-burst.png" width="880" height="553" loading="lazy" alt="Key 4 burst with expanding rings, many bright particles and RGB split around buildings"><figcaption>The key 4 burst in the actual Unity Game view.</figcaption></figure>
+      </div>
+      <div class="step">
+        <p class="step-label">Finishing the sides</p>
+        <p class="copy">I tested flowering trees to fill the empty sides, but they covered the buildings and did not look right on this street. I removed the trees and petals, then added four street lights and two neon signs. They fill the edges more naturally and also catch the glow and color split when the wave happens.</p>
+        <figure><img src="assets/final-street.png" width="1514" height="898" loading="lazy" alt="Final purple city street with buildings, street lights, neon signs and pink center"><figcaption>The final street, with lights and signs instead of trees.</figcaption></figure>
+      </div>
+    </section>
+
+    <section aria-label="Project video">
+      <p class="section-label">04 / Project video</p>
+      <div class="video-frame">
+        <iframe src="https://player.vimeo.com/video/1232543843" title="Video of Project 1: Kludging as a Creative Approach" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="video-link"><a href="https://vimeo.com/1232543843?share=copy&amp;fl=sv&amp;fe=ci" target="_blank" rel="noopener noreferrer">Watch the project video on Vimeo</a></p>
+    </section>
+  </main>
+</body>
+</html>
