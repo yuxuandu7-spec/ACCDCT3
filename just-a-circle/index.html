@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Circle</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header><nav><a href="index.html" aria-current="page">Play</a><a href="about.html">About</a></nav></header>
+  <main>
+    <section class="intro"><h1>Make a circle.</h1><div class="intro-side"><button id="start" type="button">Make a circle <span aria-hidden="true">↗</span></button></div></section>
+    <section class="machine" aria-label="The machine">
+      <div class="machine-top"><span><i id="light"></i> <span id="status" role="status">Ready when you are</span></span></div>
+      <div class="steps" aria-live="polite">
+        <article id="step1"><span class="number">01</span><h2>Somewhere</h2><p class="value" id="country">Where to?</p><p id="location">A country will be picked at random.</p></article>
+        <article id="step2"><span class="number">02</span><h2>A little weather</h2><p class="value" id="temperature">How is it outside?</p><p id="weather">The capital's location goes here next.</p></article>
+        <article id="step3"><span class="number">03</span><h2>Some simple math</h2><p class="value" id="math">Almost something</p><p id="mapping">Temperature sets the color. Wind sets the size and position.</p></article>
+      </div>
+      <figure id="place-photo" hidden><img id="city-photo" alt=""><figcaption><span id="photo-place"></span><a id="photo-credit" target="_blank" rel="noopener"></a></figcaption></figure>
+      <div class="stage"><div class="stage-caption"><span>THE RESULT</span><span id="result-label">Nothing here yet</span></div><svg id="drawing" viewBox="0 0 800 320" role="img" aria-label="A blank drawing area"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#d7d0bf"/></pattern></defs><rect width="800" height="320" fill="url(#grid)"/><circle id="result-circle" cx="400" cy="160" r="60" fill="#ee6742" visibility="hidden"/></svg><p id="finish" aria-live="polite">The world is out there. Your circle is on its way.</p></div>
+    </section>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  
+</body>
+</html>
